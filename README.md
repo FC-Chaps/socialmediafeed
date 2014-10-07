@@ -1,4 +1,6 @@
-socialmediafeed
-===============
+socialfeed
+==========
 
-A filtered social media feed built with a NodeJS server
+Chaps Digital - filtered social media feed
+
+A social media feed served with Node js and filtered with #camdencollective
