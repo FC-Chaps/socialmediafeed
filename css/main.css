@@ -1,16 +1,46 @@
 /* VARIABLES */
+body {
+  margin-bottom: 80px;
+  background-image: url("http://i.imgur.com/qlnl38n.png");
+  background-size: 150% 100%; }
+
+p {
+  margin: 0;
+  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  color: #000; }
+
+.header {
+  margin-top: 60px;
+  margin-bottom: 40px; }
+  .header h1 {
+    font-family: "Press Start 2P", cursive;
+    font-size: 45px;
+    color: #fff; }
+  .header h2 {
+    font-family: "Press Start 2P", cursive;
+    font-size: 25px;
+    color: #000; }
+
 .project {
-  border: 2px solid red;
+  border: 2px solid #4099ff;
   padding: 0;
   height: 300px; }
   .project .img-frame {
-    padding: 0; }
-    .project .img-frame img {
-      main-width: 100%; }
+    padding: 0;
+    overflow: hidden;
+    height: 100%; }
+    .project .img-frame .username {
+      position: absolute;
+      margin: 10px;
+      padding: 5px;
+      background-color: rgba(255, 255, 255, 0.75); }
   .project .text-wrapper {
-    padding: 10px; }
+    padding: 12px;
+    background-color: #79cafc;
+    height: 100%; }
   .project .tweet-text {
-    margin-bottom: 0; }
+    margin-bottom: 0;
+    line-height: 1.75; }
 
 .thirdrow .col-md-6 {
   padding: 0; }
@@ -21,5 +51,13 @@
 #post3 {
   margin-top: -300px;
   margin-bottom: 60px; }
+
+#post2 .img-frame, #post4 .img-frame, #post5 .img-frame {
+  height: 75%; }
+#post2 .text-wrapper, #post4 .text-wrapper, #post5 .text-wrapper {
+  height: 25%; }
+
+#post4, #post5 {
+  height: 375px; }
 
 /*# sourceMappingURL=main.css.map */
