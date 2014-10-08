@@ -1,0 +1,49 @@
+
+/* VARIABLES */
+$projectHeight1and3: 300px;
+$postVertSpacing: 60px;
+
+//Generic Stylings
+.container {
+
+    .header {
+
+    }
+}
+
+
+.project {
+    border: 2px solid red;
+    padding: 0;
+    height:$projectHeight1and3;
+    .img-frame {
+        padding: 0;
+        img {
+            main-width: 100%;
+        }
+    }
+    //jQuery Dependent frame styles
+    
+    .text-wrapper {
+        padding: 10px;
+    }
+        .tweet-text {
+            margin-bottom: 0;
+        }
+}
+
+//Specific Row styles
+.thirdrow {
+    .col-md-6 {
+        padding: 0;
+    }
+}
+
+//Specific Project styles
+#post2 {
+    height: ($projectHeight1and3 * 2) + $postVertSpacing;
+}
+#post3 {
+    margin-top: -$projectHeight1and3;
+    margin-bottom: $postVertSpacing;
+}

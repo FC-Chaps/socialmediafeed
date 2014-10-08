@@ -1,0 +1,25 @@
+/* VARIABLES */
+.project {
+  border: 2px solid red;
+  padding: 0;
+  height: 300px; }
+  .project .img-frame {
+    padding: 0; }
+    .project .img-frame img {
+      main-width: 100%; }
+  .project .text-wrapper {
+    padding: 10px; }
+  .project .tweet-text {
+    margin-bottom: 0; }
+
+.thirdrow .col-md-6 {
+  padding: 0; }
+
+#post2 {
+  height: 660px; }
+
+#post3 {
+  margin-top: -300px;
+  margin-bottom: 60px; }
+
+/*# sourceMappingURL=main.css.map */
