@@ -17,8 +17,11 @@ var serverTools = module.exports = {
 
 	makeServer: function makeServer (port) {
 		http.createServer(function (request, response) {
-			response.writeHead(200, {"Content-Type": "application/json"});
-			response.write(JSON.stringify(serverTools.tweetStore));
+			response.writeHead(200, {
+				"Content-Type": "text/plain",
+				"Access-Control-Allow-Origin": "*"
+			});
+			response.end(JSON.stringify(serverTools.tweetStore));
 		}).listen(port);
 	},
 
@@ -35,13 +38,14 @@ var serverTools = module.exports = {
 				if(tweet.entities && tweet.entities.media && tweet.entities.media[0].type === "photo"){
 					var validTweet = {};
 					validTweet.username = tweet.user.screen_name;
-					validTweet.image = tweet.entities.media.media_url;
+					validTweet.image = tweet.entities.media[0].media_url;
 					validTweet.date = tweet.created_at;
 					validTweet.body = tweet.text;
 					serverTools.tweetStore.newTweet(validTweet);
 				}
 			});
 		});
+		
 	}
 };
 

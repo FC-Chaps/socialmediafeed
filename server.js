@@ -1,10 +1,10 @@
 var serverTools = require("./servermodule.js");
 
-console.log(serverTools.tweetStore)
-
 serverTools.getTwitterData("collectiveacademy");
 
-serverTools.makeServer(8000);
+var port = process.env.PORT || 3000;
+
+serverTools.makeServer(port);
 
 
 
