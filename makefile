@@ -1,4 +1,4 @@
-REPORTER = Spec
+REPORTER = spec
 
 test:
 	@NODE_ENV=test
