@@ -1,0 +1,17 @@
+{
+  "name": "testing",
+  "version": "1.0.0",
+  "description": "a test",
+  "main": "index.js",
+  "scripts": {
+    "test": "./node_modules/./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- --recursive -R spec"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^1.9.2",
+    "istanbul": "^0.3.2",
+    "mocha": "^1.21.4"
+    "supertest": ""
+  }
+}
