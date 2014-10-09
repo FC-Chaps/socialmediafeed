@@ -50,7 +50,7 @@ p {
   padding: 0; }
 
 #post2 {
-  height: 600px; }
+  height: 640px; }
   #post2 .img-frame {
     height: 80%; }
   #post2 .text-wrapper {
@@ -58,7 +58,7 @@ p {
 
 #post3 {
   margin-top: -300px;
-  margin-bottom: 0px; }
+  margin-bottom: 40px; }
 
 #post4, #post5 {
   height: 375px; }
