@@ -8,7 +8,7 @@ p {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
   color: #000;
-  font-size: 14px; }
+  font-size: 13px; }
 
 .header {
   margin-top: 60px;
@@ -37,9 +37,10 @@ p {
       position: absolute;
       margin: 10px;
       padding: 5px;
-      background-color: rgba(255, 255, 255, 0.75); }
+      background-color: rgba(255, 255, 255, 0.75);
+      z-index: 100; }
   .post .text-wrapper {
-    padding: 20px;
+    padding: 25px;
     background-color: #79cafc;
     height: 100%; }
   .post .tweet-text {
@@ -70,9 +71,19 @@ p {
   #post4 .text-wrapper, #post5 .text-wrapper {
     height: 35%; }
 
-#post1 .img-frame img, #post2 .img-frame img, #post3 .img-frame img {
-  height: 100%;
-  max-width: none; }
+#post1 .img-frame, #post2 .img-frame, #post3 .img-frame {
+  overflow: hidden;
+  position: relative; }
+  #post1 .img-frame img, #post2 .img-frame img, #post3 .img-frame img {
+    position: absolute;
+    top: -9999px;
+    bottom: -9999px;
+    left: -9999px;
+    right: -9999px;
+    margin: auto;
+    min-height: 100%;
+    min-width: 100%;
+    max-width: none; }
 
 @media (max-width: 768px) {
   p {
