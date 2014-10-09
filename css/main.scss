@@ -19,7 +19,7 @@ p {
     margin: 0;
     font-family: $bodyFontFamily;
     color: #000;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .header {
@@ -56,12 +56,11 @@ p {
             margin: 10px;
             padding: 5px;
             background-color: rgba(255,255,255,0.75);
+            z-index: 100;
         }
     }
-    //jQuery Dependent frame styles
-    
     .text-wrapper {
-        padding: 20px;
+        padding: 25px;
         background-color: rgb(121,202,252);
         height:100%;
     }
@@ -111,8 +110,17 @@ p {
 //Images that need stretching to fill height
 #post1, #post2, #post3 {
     .img-frame {
+        overflow: hidden;
+        position: relative;
         img {
-            height: 100%;
+            position: absolute;
+            top: -9999px;
+            bottom: -9999px;
+            left: -9999px;
+            right: -9999px;
+            margin: auto;
+            min-height: 100%;
+            min-width: 100%;
             max-width: none;
         }
     }
