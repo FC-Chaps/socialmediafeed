@@ -10,6 +10,7 @@
   "license": "ISC",
   "dependencies": {
     "http": "0.0.0",
+    "mongodb": "^1.4.19",
     "twit": "^1.1.18"
   },
   "devDependencies": {

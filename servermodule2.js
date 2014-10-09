@@ -19,9 +19,12 @@ var serverTools = module.exports = {
 		http.createServer(function (request, response) {
 			response.writeHead(200, {
 				"Content-Type": "text/plain",
+				//SEE ABOUT CHANGING THIS TO ONE SITE
 				"Access-Control-Allow-Origin": "*"
 			});
-			response.end(JSON.stringify(serverTools.tweetStore));
+			serverTools.addToDB(serverTools.tweetStore);
+			console.log(serverTools.getFromDB(3));
+			response.end(JSON.stringify(serverTools.getFromDB(3)));
 		}).listen(port);
 	},
 
@@ -48,43 +51,54 @@ var serverTools = module.exports = {
 	}, 
 
 	addToDB: function addToDB (addDocument) {
-		var mongoURI = "mongodb://<chaps>:<ontwitter>@linus.mongohq.com:10089/chaps-twitter";
+		var mongoURI = require("./mongo.js").url;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
 				var collection = db.collection("tweets");
 				Object.keys(addDocument).forEach(function (tweet) {
-					var tweetExists = collection.find( { "id": addDocument[tweet] } );
-					if (tweetExists) {
-						return;
-					} else {
-						collection.insert(addDocument[tweet]);
-					}
-				});	
+					collection.find( { id: addDocument[tweet].id }, function (err, cursor) {
+						cursor.toArray(function(err, items){
+							if(!items.length){
+								collection.insert(addDocument[tweet], function (err, result) {});
+							}
+						})
+					});
+				});
 		});
 		
 	},
-
+/*
 	removeFromDB: function removeFromDB (tweetID) {
-		var mongoURI = "mongodb://<chaps>:<ontwitter>@linus.mongohq.com:10089/chaps-twitter";
+		var mongoURI = require("./mongo.js").url;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
 			var collection = db.collection("tweets");
 			collection.remove( { "id": tweetID } );
 		});
 	},
-
+*/
 	getFromDB: function getFromDB (quantity) {
-		var mongoURI = "mongodb://<chaps>:<ontwitter>@linus.mongohq.com:10089/chaps-twitter";
+		var mongoURI = require("./mongo.js").url;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
 			var collection = db.collection("tweets");
-			return collection.find().sort( { "date": -1 } ).limit(quantity);
+			/*console.log(collection.find(function (err, cursor) {
+				cursor.toArray(function (err, item) {
+					console.log(item);
+				});
+			}));*/
+			collection.find().sort( { "date": -1 } ).limit(quantity).toArray(function (err, items) {
+				//console.log(items);
+				return items;
+			});
+			//console.log(collection.find().sort( { "date": -1 } ).limit(quantity).toArray(function(err, item){return item}));
+			//return collection.find().sort( { "date": -1 } ).limit(quantity);
 		});
-	},
-
+	}
+/*
 	connectToMongo: function connectToMongo (callback) {
-		var mongoURI = "mongodb://<chaps>:<ontwitter>@linus.mongohq.com:10089/chaps-twitter";
+		var mongoURI = require("./mongo.js").url;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
 			callback();
 		});
 	}
-
+*/
 };
 
