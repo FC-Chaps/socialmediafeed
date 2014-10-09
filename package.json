@@ -8,6 +8,10 @@
   },
   "author": "",
   "license": "ISC",
+  "dependencies": {
+    "http": "0.0.0",
+    "twit": "^1.1.18"
+  },
   "devDependencies": {
     "chai": "^1.9.2",
     "istanbul": "^0.3.2",
