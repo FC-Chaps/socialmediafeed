@@ -7,38 +7,42 @@ body {
 p {
   margin: 0;
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  color: #000; }
+  color: #000;
+  font-size: 14px; }
 
 .header {
   margin-top: 60px;
   margin-bottom: 40px; }
-  .header h1 {
-    font-family: "Press Start 2P", cursive;
-    font-size: 45px;
-    color: #fff; }
-  .header h2 {
-    font-family: "Press Start 2P", cursive;
-    font-size: 25px;
-    color: #000; }
+  .header div {
+    padding: 0; }
+    .header div h1 {
+      font-family: "Press Start 2P", cursive;
+      font-size: 45px;
+      color: #fff; }
+    .header div h2 {
+      font-family: "Press Start 2P", cursive;
+      font-size: 25px;
+      color: #000; }
 
-.project {
-  border: 2px solid #4099ff;
+.post {
   padding: 0;
   height: 300px; }
-  .project .img-frame {
+  .post .img-frame {
     padding: 0;
     overflow: hidden;
     height: 100%; }
-    .project .img-frame .username {
+    .post .img-frame img {
+      max-width: 100%; }
+    .post .img-frame .username {
       position: absolute;
       margin: 10px;
       padding: 5px;
       background-color: rgba(255, 255, 255, 0.75); }
-  .project .text-wrapper {
-    padding: 12px;
+  .post .text-wrapper {
+    padding: 20px;
     background-color: #79cafc;
     height: 100%; }
-  .project .tweet-text {
+  .post .tweet-text {
     margin-bottom: 0;
     line-height: 1.75; }
 
@@ -46,18 +50,50 @@ p {
   padding: 0; }
 
 #post2 {
-  height: 660px; }
+  height: 640px; }
+  #post2 .img-frame {
+    height: 80%; }
+  #post2 .text-wrapper {
+    height: 20%; }
 
 #post3 {
   margin-top: -300px;
-  margin-bottom: 60px; }
-
-#post2 .img-frame, #post4 .img-frame, #post5 .img-frame {
-  height: 75%; }
-#post2 .text-wrapper, #post4 .text-wrapper, #post5 .text-wrapper {
-  height: 25%; }
+  margin-bottom: 40px; }
 
 #post4, #post5 {
   height: 375px; }
+  #post4 .img-frame, #post5 .img-frame {
+    height: 75%; }
+  #post4 .text-wrapper, #post5 .text-wrapper {
+    height: 30%; }
+
+#post1 .img-frame img, #post2 .img-frame img, #post3 .img-frame img {
+  height: 100%;
+  max-width: none; }
+
+@media (max-width: 768px) {
+  p {
+    line-height: 1.2;
+    font-size: 10px; }
+
+  .header {
+    margin-top: 30px;
+    margin-bottom: 20px; }
+    .header div h1 {
+      font-size: 25px; }
+    .header div h2 {
+      font-size: 15px; }
+
+  .post, #post1, #post2, #post3, #post4, #post5 {
+    height: 300px;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    .post .img-frame, #post1 .img-frame, #post2 .img-frame, #post3 .img-frame, #post4 .img-frame, #post5 .img-frame {
+      height: 225px;
+      overflow: hidden; }
+      .post .img-frame img, #post1 .img-frame img, #post2 .img-frame img, #post3 .img-frame img, #post4 .img-frame img, #post5 .img-frame img {
+        width: 100%; }
+    .post .text-wrapper, #post1 .text-wrapper, #post2 .text-wrapper, #post3 .text-wrapper, #post4 .text-wrapper, #post5 .text-wrapper {
+      height: 90px; } }
 
 /*# sourceMappingURL=main.css.map */
