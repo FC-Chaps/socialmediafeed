@@ -44,7 +44,7 @@ p {
         h2 {
             font-family: $titleFontFamily;
             font-size: 25px;
-            color: #000;
+            color: $lightTwitterBlue;
         }
     }
 }
@@ -71,7 +71,7 @@ p {
         .username {
             position: absolute;
             margin: 10px;
-            padding: 5px;
+            padding: 10px;
             background-color: rgba(255,255,255,0.75);
             z-index: 100;
         }
@@ -188,6 +188,32 @@ p {
             padding: 10px;
         }
     } 
+}
+
+@media (min-width: 768px) and (max-width: 991px)  {
+    .post, #post1, #post2, #post3, #post4, #post5 {
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .img-frame {
+            overflow: hidden;
+            img {
+                width: 100%;
+                position: inherit;
+                top: 0;
+                left: 0;
+            }
+        }
+        .text-wrapper {
+            padding: 10px;
+        }
+    } 
+}
+
+@media (min-width: 992px) {
+    body {
+        margin-bottom: 120px;
+    }
 }
 
 

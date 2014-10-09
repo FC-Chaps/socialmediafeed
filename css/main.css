@@ -27,7 +27,7 @@ p {
     .header div h2 {
       font-family: "Press Start 2P", cursive;
       font-size: 25px;
-      color: #000; }
+      color: #79cafc; }
 
 .post {
   padding: 0;
@@ -47,7 +47,7 @@ p {
     .post .img-frame .username {
       position: absolute;
       margin: 10px;
-      padding: 5px;
+      padding: 10px;
       background-color: rgba(255, 255, 255, 0.75);
       z-index: 100; }
   .post .text-wrapper {
@@ -129,5 +129,22 @@ p {
         left: 0; }
     .post .text-wrapper, #post1 .text-wrapper, #post2 .text-wrapper, #post3 .text-wrapper, #post4 .text-wrapper, #post5 .text-wrapper {
       padding: 10px; } }
+@media (min-width: 768px) and (max-width: 991px) {
+  .post, #post1, #post2, #post3, #post4, #post5 {
+    height: auto;
+    margin-top: 10px;
+    margin-bottom: 10px; }
+    .post .img-frame, #post1 .img-frame, #post2 .img-frame, #post3 .img-frame, #post4 .img-frame, #post5 .img-frame {
+      overflow: hidden; }
+      .post .img-frame img, #post1 .img-frame img, #post2 .img-frame img, #post3 .img-frame img, #post4 .img-frame img, #post5 .img-frame img {
+        width: 100%;
+        position: inherit;
+        top: 0;
+        left: 0; }
+    .post .text-wrapper, #post1 .text-wrapper, #post2 .text-wrapper, #post3 .text-wrapper, #post4 .text-wrapper, #post5 .text-wrapper {
+      padding: 10px; } }
+@media (min-width: 992px) {
+  body {
+    margin-bottom: 120px; } }
 
 /*# sourceMappingURL=main.css.map */
