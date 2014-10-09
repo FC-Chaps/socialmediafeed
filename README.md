@@ -1,5 +1,5 @@
-socialfeed
-==========
+socialmediafeed
+===============
 
 Chaps Digital - filtered social media feed
 
