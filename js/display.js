@@ -1,16 +1,12 @@
-$(".img-frame").each(function () {
-    // Uncomment the following if you need to make this dynamic
-    var frameH = $(this).height();
-    var frameW = $(this).width();
-    var frameRatio = frameW / frameH;
+// Function that claculates the ratio of width to height of divs one to four
+var imgFrames = document.getElementsByClassName('img-frame');
+var i = 0;
+var frameWidths = [];
+var frameHeights = [];
 
-    var imgH = $(this).children("img").height();
-    var imgW = $(this).children("img").width();
-    var imgRatio = imgW / imgH;
+//Width / Height = Ratio
+function frameRatio(width, height) { return (width / height); }
+for (i = 0; i < imgFrames.length; i++) {frameWidths[i] = imgFrames[i].clientWidth; frameHeights[i] = imgFrames[i].clientHeight; frameRatio(frameWidths[i]); }
 
-    if (imgRatio < frameRatio) {
-        $(this).addClass("portrait");
-    } else {
-        $(this).addClass("landscape");
-    }
-});
+console.log(frameHeights);
+// Function that claculates the ratio of width to height of the image in divs one to four
