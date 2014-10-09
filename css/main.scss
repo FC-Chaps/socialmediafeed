@@ -69,6 +69,10 @@ p {
             margin-bottom: 0;
             line-height: 1.75;
         }
+        .date {
+            color: #388;
+            margin-top: 8px;
+        }
 }
 
 
@@ -101,7 +105,7 @@ p {
         height: 75%;
     }
     .text-wrapper {
-        height: 30%;
+        height: 35%;
     }
 }
 //Images that need stretching to fill height

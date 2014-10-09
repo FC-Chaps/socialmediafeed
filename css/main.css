@@ -45,6 +45,9 @@ p {
   .post .tweet-text {
     margin-bottom: 0;
     line-height: 1.75; }
+  .post .date {
+    color: #388;
+    margin-top: 8px; }
 
 .thirdrow .col-md-6 {
   padding: 0; }
@@ -65,7 +68,7 @@ p {
   #post4 .img-frame, #post5 .img-frame {
     height: 75%; }
   #post4 .text-wrapper, #post5 .text-wrapper {
-    height: 30%; }
+    height: 35%; }
 
 #post1 .img-frame img, #post2 .img-frame img, #post3 .img-frame img {
   height: 100%;
