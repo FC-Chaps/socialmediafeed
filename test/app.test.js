@@ -9,6 +9,7 @@ var expect = require("chai").expect;
 
 // The following tests are for the websites html
 describe('When a user goes to the home page', function() {
+	
     var webSiteRequest = request("http//");
     it("should return status code OK", function(done) {
         request.get('/')
