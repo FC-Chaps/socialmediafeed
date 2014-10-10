@@ -1,11 +1,20 @@
 
-/* VARIABLES */
-$postMDHeight: 300px;
-$postVertSpacing: 40px;
 
-$bodyFontFamily: "Helvetica Neue",Helvetica,Arial,sans-serif;
-//'Nixie One', cursive;
-$titleFontFamily: 'Press Start 2P', cursive;
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        SOCIAL MEDIA FEED
+/*%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+        week 4 FAC
+*/
+
+/* VARIABLES */
+    $postMDHeight: 300px;
+    $postVertSpacing: 40px;
+
+    $bodyFontFamily: "Helvetica Neue",Helvetica,Arial,sans-serif;
+    //'Nixie One', cursive;
+    $titleFontFamily: 'Press Start 2P', cursive;
+
+    $lightTwitterBlue: rgb(121,202,252);
 
 //Generic Stylings
 body {
@@ -35,7 +44,7 @@ p {
         h2 {
             font-family: $titleFontFamily;
             font-size: 25px;
-            color: #000;
+            color: $lightTwitterBlue;
         }
     }
 }
@@ -48,20 +57,28 @@ p {
         padding: 0;
         overflow: hidden;
         height: 100%;
+        &:hover {
+            border: 3px solid $lightTwitterBlue;
+            transition: border 0.2s;
+        }
         img {
             max-width: 100%;
+            &:hover {
+                -webkit-filter: contrast(120%);
+                -webkit-filter: brightness(120%);
+            }
         }
         .username {
             position: absolute;
             margin: 10px;
-            padding: 5px;
+            padding: 10px;
             background-color: rgba(255,255,255,0.75);
             z-index: 100;
         }
     }
     .text-wrapper {
         padding: 25px;
-        background-color: rgb(121,202,252);
+        background-color: $lightTwitterBlue;
         height:100%;
     }
         .tweet-text {
@@ -82,7 +99,6 @@ p {
     }
 }
 
-
 //Specific post styles
 #post2 {
     height: ($postMDHeight * 2) + $postVertSpacing;
@@ -97,7 +113,6 @@ p {
     margin-top: -$postMDHeight;
     margin-bottom: $postVertSpacing;
 }
-
 #post4, #post5 {
     height: $postMDHeight * 1.25;
     .img-frame {
@@ -107,6 +122,7 @@ p {
         height: 35%;
     }
 }
+
 //Images that need stretching to fill height
 #post1, #post2, #post3 {
     .img-frame {
@@ -121,10 +137,18 @@ p {
             margin: auto;
             min-height: 100%;
             min-width: 100%;
-            max-width: none;
         }
     }
 }
+
+/*
+.portrait img {
+    max-width: 100%;
+}
+.landscape img {
+    max-height: 100%;
+}
+*/
 
 @media (max-width: 768px) {
     
@@ -148,20 +172,48 @@ p {
     }
 
     .post, #post1, #post2, #post3, #post4, #post5 {
-        height: $postMDHeight;
+        height: auto;
         margin-top: 10px;
         margin-bottom: 10px;
         .img-frame {
-            height: $postMDHeight * 0.75;
             overflow: hidden;
             img {
                 width: 100%;
+                position: inherit;
+                top: 0;
+                left: 0;
             }
         }
         .text-wrapper {
-            height: $postMDHeight * 0.3;
+            padding: 10px;
         }
     } 
+}
+
+@media (min-width: 768px) and (max-width: 991px)  {
+    .post, #post1, #post2, #post3, #post4, #post5 {
+        height: auto;
+        margin-top: 10px;
+        margin-bottom: 10px;
+        .img-frame {
+            overflow: hidden;
+            img {
+                width: 100%;
+                position: inherit;
+                top: 0;
+                left: 0;
+            }
+        }
+        .text-wrapper {
+            padding: 10px;
+        }
+    } 
+}
+
+@media (min-width: 992px) {
+    body {
+        margin-bottom: 120px;
+    }
 }
 
 
