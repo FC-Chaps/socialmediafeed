@@ -5,7 +5,7 @@ var request = require('supertest');
 request = request('http://0.0.0.0:*****')
 var expect = require("chai").expect;
 
-
+-describe('When a user goes to the home page', function() {
 
 // The following tests are for the websites html
 describe('When a user goes to the home page', function() {
