@@ -39,11 +39,9 @@ p {
     .post .img-frame:hover {
       border: 3px solid #79cafc;
       transition: border 0.2s; }
-    .post .img-frame img {
-      max-width: 100%; }
-      .post .img-frame img:hover {
-        -webkit-filter: contrast(120%);
-        -webkit-filter: brightness(120%); }
+    .post .img-frame img:hover {
+      -webkit-filter: contrast(120%);
+      -webkit-filter: brightness(120%); }
     .post .img-frame .username {
       position: absolute;
       margin: 10px;
@@ -82,10 +80,10 @@ p {
   #post4 .text-wrapper, #post5 .text-wrapper {
     height: 35%; }
 
-#post1 .img-frame, #post2 .img-frame, #post3 .img-frame {
+#post1 .img-frame, #post2 .img-frame, #post3 .img-frame, #post4 .img-frame, #post5 .img-frame {
   overflow: hidden;
   position: relative; }
-  #post1 .img-frame img, #post2 .img-frame img, #post3 .img-frame img {
+  #post1 .img-frame img, #post2 .img-frame img, #post3 .img-frame img, #post4 .img-frame img, #post5 .img-frame img {
     position: absolute;
     top: -9999px;
     bottom: -9999px;
@@ -95,14 +93,12 @@ p {
     min-height: 100%;
     min-width: 100%; }
 
-/*
-.portrait img {
-    max-width: 100%;
-}
-.landscape img {
-    max-height: 100%;
-}
-*/
+.taller {
+  max-height: 100%; }
+
+.wider {
+  max-width: 100%; }
+
 @media (max-width: 768px) {
   p {
     line-height: 1.2;
