@@ -15,6 +15,7 @@
     $titleFontFamily: 'Press Start 2P', cursive;
 
     $lightTwitterBlue: rgb(121,202,252);
+    $twitterBlue: #4099FF;
 
 //Generic Stylings
 body {
@@ -44,7 +45,7 @@ p {
         h2 {
             font-family: $titleFontFamily;
             font-size: 25px;
-            color: $lightTwitterBlue;
+            color: $twitterBlue;
         }
     }
 }
