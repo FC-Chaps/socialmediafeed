@@ -2,6 +2,7 @@ var app = require("../app.js");
 var index = require("../index.js");
 var server = require("../serverModule.js");
 var request = require('supertest');
+request = request('http://0.0.0.0:*****')
 var expect = require("chai").expect;
 
 
