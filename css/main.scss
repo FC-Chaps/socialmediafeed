@@ -62,7 +62,6 @@ p {
             transition: border 0.2s;
         }
         img {
-            max-width: 100%;
             &:hover {
                 -webkit-filter: contrast(120%);
                 -webkit-filter: brightness(120%);
@@ -124,7 +123,7 @@ p {
 }
 
 //Images that need stretching to fill height
-#post1, #post2, #post3 {
+#post1, #post2, #post3, #post4, #post5 {
     .img-frame {
         overflow: hidden;
         position: relative;
@@ -140,15 +139,12 @@ p {
         }
     }
 }
-
-/*
-.portrait img {
-    max-width: 100%;
-}
-.landscape img {
+.taller {
     max-height: 100%;
 }
-*/
+.wider {
+    max-width: 100%;
+}
 
 @media (max-width: 768px) {
     
