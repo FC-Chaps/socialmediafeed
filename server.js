@@ -1,6 +1,7 @@
-var serverTools = require("./servermodule2.js");
+var serverTools = require("./servermodule.js");
+
 serverTools.getFromDB(7);
-//This needs to be called ON REQUEST!
+
 serverTools.getTwitterData("collectiveacademy");
 
 var port = process.env.PORT || 3000;

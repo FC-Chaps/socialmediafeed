@@ -1,6 +1,7 @@
 var http = require("http");
 var twit = require("twit");
 var mongo = require("mongodb");
+var counter = 0;
 
 var serverTools = module.exports = {
 
@@ -42,7 +43,7 @@ var serverTools = module.exports = {
 						id: tweet.id,
 						username: tweet.user.screen_name,
 						image: tweet.entities.media[0].media_url,
-						date: tweet.created_at,
+						date: new Date(tweet.created_at),
 						body: tweet.text
 					};
 					serverTools.tweetStore.newTweet(validTweet);
@@ -68,7 +69,7 @@ var serverTools = module.exports = {
 		});
 		
 	},
-/*
+
 	removeFromDB: function removeFromDB (tweetID) {
 		var mongoURI = require("./mongo.js").url;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
@@ -76,28 +77,19 @@ var serverTools = module.exports = {
 			collection.remove( { "id": tweetID } );
 		});
 	},
-*/
+
 	getFromDB: function getFromDB (quantity) {
 		var mongoURI = require("./mongo.js").url;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
 			var collection = db.collection("tweets");
-			collection.find().sort( { "date": -1 } ).limit(quantity).toArray(function (err, items) {
-				//console.log(items);
+			collection.find().sort( { "id": -1 } ).limit(quantity).toArray(function (err, items) {
+				console.log(counter);
+				counter += 1;
 				serverTools.tweetDelivery.payload = items;
 			});
 		})
 	},
 
-	tweetDelivery: {
-
-	}
-/*
-	connectToMongo: function connectToMongo (callback) {
-		var mongoURI = require("./mongo.js").url;
-		mongo.MongoClient.connect(mongoURI, function (err, db) {
-			callback();
-		});
-	}
-*/
+	tweetDelivery: {}
 };
 
