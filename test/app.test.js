@@ -1,3 +1,4 @@
+var app = require("../app.js");
 var index = require("../index.js");
 var server = require("../serverModule.js");
 var request = require('supertest');
