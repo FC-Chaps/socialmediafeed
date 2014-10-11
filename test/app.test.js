@@ -1,4 +1,4 @@
-var index = require("../index.js");
+var index = require("../js/app.js");
 var server = require("../serverModule.js");
 var request = require('supertest');
 var expect = require("chai").expect;
@@ -7,7 +7,7 @@ var expect = require("chai").expect;
 
 // The following tests are for the websites html
 describe('When a user goes to the home page', function() {
-    var webSiteRequest = request("http//");
+    var webSiteRequest = request("http//0.0.0.0:4000");
     it("should return status code OK", function(done) {
         request.get('/')
         .expect(200, done);

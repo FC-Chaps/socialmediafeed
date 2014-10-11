@@ -1,7 +1,6 @@
 var http = require("http");
 var twit = require("twit");
 var mongo = require("mongodb");
-var counter = 0;
 
 var serverTools = module.exports = {
 
@@ -18,14 +17,15 @@ var serverTools = module.exports = {
 
 	makeServer: function makeServer (port) {
 		var server = http.createServer(function (request, response) {
-			response.writeHead(200, {
-				"Content-Type": "application/json",
-				//SEE ABOUT CHANGING THIS TO ONE SITE
-				"Access-Control-Allow-Origin": "*"
-			});
 			serverTools.getTwitterData("collectiveacademy");
 			serverTools.addToDB(serverTools.tweetStore);
-			serverTools.getFromDB(7);
+			serverTools.getFromDB(5);
+			response.writeHead(200, {
+				"Content-Type": "text/plain",
+				//SEE ABOUT CHANGING THIS TO ONE SITE
+				"Access-Control-Allow-Origin": "*",
+				"Content-Length": Buffer.byteLength(JSON.stringify(serverTools.tweetDelivery.payload), 'utf8')
+			});
 			response.write(JSON.stringify(serverTools.tweetDelivery.payload));
 		});
 		server.listen(port);
@@ -54,24 +54,25 @@ var serverTools = module.exports = {
 	}, 
 
 	addToDB: function addToDB (addDocument) {
-		var mongoURI = require("./mongo.js").url;
+		var mongoURI = process.env.MONGO_URI;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
 				var collection = db.collection("tweets");
 				Object.keys(addDocument).forEach(function (tweet) {
 					collection.find( { id: addDocument[tweet].id }, function (err, cursor) {
 						cursor.toArray(function(err, items){
-							if(!items.length){
+							if(items.length === 0){
 								collection.insert(addDocument[tweet], function (err, result) {});
 							}
 						})
 					});
 				});
+				collection.ensureIndex({id: 1}, {unique: true, dropDups: true}, function (err, indexName) {});
 		});
 		
 	},
 
 	removeFromDB: function removeFromDB (tweetID) {
-		var mongoURI = require("./mongo.js").url;
+		var mongoURI = process.env.MONGO_URI;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
 			var collection = db.collection("tweets");
 			collection.remove( { "id": tweetID } );
@@ -79,12 +80,10 @@ var serverTools = module.exports = {
 	},
 
 	getFromDB: function getFromDB (quantity) {
-		var mongoURI = require("./mongo.js").url;
+		var mongoURI = process.env.MONGO_URI;
 		mongo.MongoClient.connect(mongoURI, function (err, db) {
 			var collection = db.collection("tweets");
 			collection.find().sort( { "id": -1 } ).limit(quantity).toArray(function (err, items) {
-				console.log(counter);
-				counter += 1;
 				serverTools.tweetDelivery.payload = items;
 			});
 		})
