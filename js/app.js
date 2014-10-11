@@ -58,7 +58,6 @@ function putInObjects (data) {
 function constructContent (object) {
 	var content = "";
 	Object.keys(object).forEach(function (key) {
-	var elapsed = 
 		switch (key) {
 			case "tweet1":
 				content += '<div class="row firstrow">' +
