@@ -15,6 +15,18 @@ function getContent (url) {
 
 }
 
+function putInObjects (data) {
+	var counter = 0;
+	var objectified = {};
+	var property;
+	data.forEach(function (tweet) {
+		counter += 1;
+		property = "tweet" + counter;
+		objectified[property] = tweet;
+	});
+	constructContent(objectified);
+}
+
 function constructContent (object) {
 	var content = "";
 	Object.keys(object).forEach(function (key) {
