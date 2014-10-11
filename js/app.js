@@ -16,7 +16,6 @@ function getContent (url) {
 }
 
 function putInObjects (data) {
-	//sortdata and create big html
 	var counter = 0;
 	var objectified = {};
 	var property;
@@ -70,11 +69,11 @@ function constructContent (object) {
             	break;
             case "tweet5":
             	content += '<div class="col-md-6"><div class="col-xs-10 col-xs-offset-1 col-md-11' +
-            	' col-md-offset-1 post" id="post5"><div class="col-xs-12 img-frame"><p class="username">' +
-            	'<a href="#" class="user">' + object[key].username + '</a></p><a href="' + object[key].image +
-            	'" class="thetweet" target="_blank"><img src="' + object[key].image +'" class=""></a>' +
-            	'</div><div class="col-xs-12 text-wrapper"><p class="tweet-text">' + object[key].body + 
-            	'</p><p class="date">' + object[key].date + '</p></div></div></div></div>'
+            		' col-md-offset-1 post" id="post5"><div class="col-xs-12 img-frame"><p class="username">' +
+            		'<a href="#" class="user">' + object[key].username + '</a></p><a href="' + object[key].image +
+            		'" class="thetweet" target="_blank"><img src="' + object[key].image +'" class=""></a>' +
+            		'</div><div class="col-xs-12 text-wrapper"><p class="tweet-text">' + object[key].body + 
+            		'</p><p class="date">' + object[key].date + '</p></div></div></div></div>'
 		}
 	
 	})
